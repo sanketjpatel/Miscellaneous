@@ -9,13 +9,13 @@
 using namespace std;
 
 int reverse(int num) throw (int){
-	int numCopy = num;					// Throw original number in case of error
+	int numCopy = num;			// Throw original number in case of error
 	
 	int ans=0;
 	int x = ~(1<<(8*sizeof(num)-1));	// Range of int on the positive side
 	//int flag = (x < 0) ? -1 : 1;		// Mod(%) takes care of negative numbers too, flag not needed.
 	
-	while(num/10 != 0){					// We don't need to worry about overflow until last digit
+	while(num/10 != 0){			// We don't need to worry about overflow until last digit
 		ans = (ans*10) + (num%10);
 		num /= 10;
 	}
