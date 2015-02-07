@@ -1,6 +1,6 @@
 /************************************
  * Implement a queue using an array *
- * Author: Sanket Patel				*
+ * Author: Sanket Patel		    *
  ************************************/
 
 #include <iostream>

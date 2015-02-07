@@ -1,6 +1,6 @@
 /****************************************** 
  * Add two numbers represented as strings *
- * Author: Sanket Patel					  *
+ * Author: Sanket Patel			  *
  ******************************************/
 #include <iostream>
 #include <string>

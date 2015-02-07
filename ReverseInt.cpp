@@ -1,5 +1,5 @@
 /************************ 
- * Reverse an int		*
+ * Reverse an int	*
  * Author: Sanket Patel *
  ************************/
  
