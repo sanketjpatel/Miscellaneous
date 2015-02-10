@@ -21,7 +21,7 @@ int reverse(int num) throw (int){
 	}
 	
 	// ans must eventually lie in the range of int
-	if ( (ans > ((x/10)-num)) || (ans < (((~x)/10)-num)) ){		
+	if ( (ans > ((x/10)-(num/10)) || (ans < (((~x)/10)-(num/10))) ){		
 		cout << "Cannot reverse this number: ";
 		throw numCopy;
 	} 
