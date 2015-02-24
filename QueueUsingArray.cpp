@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-const int max_size = 5;
+const unsigned int max_size = 5;
 
 class QueueOverFlowException { 
 	public: 
@@ -22,7 +22,7 @@ template <class T>
 class queue{
 	
 	private:
-		int size, first, last;
+		unsigned int size, first, last;
 		T arr[max_size];
 	
 	public:
@@ -46,7 +46,7 @@ class queue{
 		void print(){
 			// cout << "Size: " << size << ";\tFirst: " << first << ";\tLast: " << last << ';' << endl;
 			cout << '{';
-			for (int i=0; i<size-1; i++) cout << arr[(i+first) % max_size] << ", ";
+			for (int i=0; i+1<size; i++) cout << arr[(i+first) % max_size] << ", ";
 			if(size>0) cout << arr[(first+size-1) % max_size];
 			cout << '}' << endl;
 		}
