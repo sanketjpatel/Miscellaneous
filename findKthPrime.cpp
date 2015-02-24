@@ -1,3 +1,7 @@
+/**************************
+ * Find k-th prime number *
+ * Author: Sanket Patel   *
+ **************************/
 #include <iostream>
 #include <cmath>
 
