@@ -42,7 +42,7 @@ int findKthPrime(int k) {
 // Returns true if it is a prime, otherwise returns false
 bool isPrime(int n) {
 
-	int limit = sqrt(n);	// No need to check for primes beyond this limit
+	int limit = sqrt(n);	// No need to check for divisibility beyond this limit
 
 	for (int i=0; 1; i++) {
 
