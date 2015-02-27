@@ -47,7 +47,7 @@ bool isPrime(int n) {
 	for (int i=0; 1; i++) {
 
 		// Ideally, primes[i] should be non-zero.
-		// Putting this just in case, if it is called by some function other than findKthPrime.
+		// Putting this just in case if isPrime is called by some function other than findKthPrime.
 		if (primes[i] == 0) primes[i] == findKthPrime(i);
 		if (primes[i] > limit) break;
 
