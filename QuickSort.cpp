@@ -18,22 +18,22 @@ void print (int * array, int size) {
 
 void quickSort(int arr[], int left, int right){
 
-    if (left < right){
+	if (left < right){
 
-    	int pivot = arr[right];
-    	int left_runner = left;
+    		int pivot = arr[right];
+	    	int left_runner = left;	// left_runner represents the first element of the right subarray; elements > pivot.
 
-    	for (int right_runner=left; right_runner < right; right_runner++){
-    		if (arr[right_runner] <= pivot){
-	            swap(&arr[left_runner], &arr[right_runner]);
-	            left_runner++;
-	        }
-	    }
-	    swap(&arr[left_runner], &arr[right]);
+    		for (int right_runner=left_runner; right_runner < right; right_runner++){
+    			if (arr[right_runner] <= pivot){
+		            swap(&arr[left_runner], &arr[right_runner]);
+		            left_runner++;
+		        }
+		}
+		swap(&arr[left_runner], &arr[right]);
 
-	    quickSort(arr, left, left_runner-1);
-	    quickSort(arr, left_runner+1, right);
-    }
+		quickSort(arr, left, left_runner-1);
+		quickSort(arr, left_runner+1, right);
+	}
 }
 
 void quickSort(int * array, int size) { quickSort(array, 0, size-1); }
