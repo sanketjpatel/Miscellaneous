@@ -37,10 +37,10 @@ int countMinSplitsDynamic(char * str){
 
 	// counts[i][j] represents splits required from str.substr(i, j+1).
 	// palindromes[i][j] represents if str.substr(i, j+1) is palindrome or not.
-	int counts[length][length];
+	int counts[length];
 	bool palindromes[length][length];
 
-	for (int i=0; i<length; i++) palindromes[i][i] = true, counts[i][i] = 0;
+	for (int i=0; i<length; i++) palindromes[i][i] = true;
 
 	// L represents length of substring
 	for(int L = 2; L<=length; L++){
@@ -52,18 +52,22 @@ int countMinSplitsDynamic(char * str){
 
 			// Set value for palindrome[i][j]
 			if (L == 2) palindromes[i][j] = (str[i] == str[j]);
-            else palindromes[i][j] = (str[i] == str[j]) && palindromes[i+1][j-1];
-
-            if(palindromes[i][j]) counts[i][j]=0;
-            else{
-            	counts[i][j] = INT_MAX;
-            	// check for all possible splits
-            	for(int k=i; k<j; k++) counts[i][j] = min(counts[i][j], counts[i][k] + counts[k+1][j]+1);
-            }
+			else palindromes[i][j] = (str[i] == str[j]) && palindromes[i+1][j-1];
 		}
 	}
 
-	return counts[0][length-1];
+	for(int i=0; i<length; i++){
+		if(palindromes[0][i]) counts[i]=0;
+		else{
+			counts[i] = INT_MAX;
+			// check for all possible splits
+			for(int j=0; j<i; j++){
+				if(palindromes[j+1][i] == true && 1+counts[j]<counts[i]) counts[i] = 1+counts[j];
+			}
+		}
+	}
+
+	return counts[length-1];
 }
 
 int countMinSplits(string str){
