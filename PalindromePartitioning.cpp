@@ -35,7 +35,7 @@ int countMinSplitsRecursive(char * str){ return countMinSplitsRecursive(str, 0, 
 int countMinSplitsDynamic(char * str){
 	int length = strlen(str);
 
-	// counts[i][j] represents splits required from str.substr(i, j+1).
+	// counts[i] represents splits required from str.substr(0, i).
 	// palindromes[i][j] represents if str.substr(i, j+1) is palindrome or not.
 	int counts[length];
 	bool palindromes[length][length];
