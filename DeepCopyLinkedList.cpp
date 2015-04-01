@@ -71,19 +71,18 @@ void printAddresses(node * head){
 int main() {
 	lookupTable[NULL] = NULL;
 
-	/**
+    /**
 	 * Create a test linked list
 	 *
-	 * 	     _______________
-	 * 	    |		    |
-	 *  	   _|_     ___     _v_     ___
+	 * 	         _______________
+	 * 	        |               |
+	 *         _|_     ___     _v_     ___
 	 * head-->|_1_|-->|_2_|-->|_3_|-->|_4_|-->NULL
-	 *		    ^		    |
-	 *  		    |_______________|
+	 *                  ^               |
+	 *                  |_______________|
 	 *
 	 * Kudos! That was a bit of neat work, haha :)
 	 * */
-
 	node * head = newNode(1);
 	head->next = newNode(2);
 	head->next->next = newNode(3);
